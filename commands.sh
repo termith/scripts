@@ -12,5 +12,7 @@ grep --binary-files=text --context=n 'stringfromfile' /dev/somePartition > someF
 find -iname '*.mp3' -print0 | xargs -0 mid3iconv -eCP1251 --remove-v1 	# Меняем кодировку музыки
 
 head -c bytes_size /dev/random > my_file & # Генерирует файл указанного размера, выполняется в фоне (&)
+
+setsid myscript.sh >/dev/null 2>&1 < /dev/null & # Запускает скрипт, как демон с перенаправлением вывода 
 																					
 
